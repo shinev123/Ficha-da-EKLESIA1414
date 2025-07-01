@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Mestre</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <div class="static-overlay"></div>
+    <div id="toast-container"></div>
+    <div class="container">
+        <header>
+            <h1 class="glitch" data-text="PAINEL DO MESTRE">PAINEL DO MESTRE</h1>
+            <div class="header-buttons">
+                <button id="logout-btn" class="btn-clear"><i class="fas fa-sign-out-alt"></i> Sair</button>
+            </div>
+        </header>
+        <main>
+            <div class="dashboard-grid">
+                <section class="card">
+                    <div class="dashboard-header">
+                        <h2 class="section-title">TODOS OS AGENTES REGISTRADOS</h2>
+                    </div>
+                    <div id="sheet-list-container" class="detailed-list">
+                        <div class="empty-state">Carregando agentes...</div>
+                    </div>
+                </section>
+    
+                <section class="card">
+                    <h2 class="section-title glitch-hover" data-text="TERMINAL DE ROLAGENS AO VIVO">TERMINAL DE ROLAGENS AO VIVO</h2>
+                    <div id="live-roll-feed" class="terminal-style-list" style="max-height: 40vh; display: flex; flex-direction: column-reverse; overflow-y: auto;">
+                        <div class="empty-state">Aguardando rolagens dos agentes...</div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <div id="message-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="message-modal-title">Enviar Mensagem para Agente</h3>
+            <form id="message-form">
+                <input type="hidden" id="message-target-id">
+                <div class="editable-field">
+                    <label for="message-text">Mensagem:</label>
+                    <textarea id="message-text" class="editable" rows="5" required placeholder="Digite sua mensagem..."></textarea>
+                </div>
+                <button type="submit" class="btn-save">Enviar Transmissão</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-database-compat.js"></script>
+    <script src="./firebase-init.js"></script>
+    <script src="./dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Dossiê de Agente</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="static-overlay"></div>
+    <div id="toast-container"></div>
+    <div class="auth-container">
+        <div class="card auth-card">
+            <h1 class="glitch" data-text="REGISTRO">REGISTRO</h1>
+            <p class="auth-subtitle">Protocolo de Novo Agente</p>
+            <form id="register-form">
+                <div class="editable-field">
+                    <label for="email">Email de Agente:</label>
+                    <input type="email" id="email" class="editable" required>
+                </div>
+                <div class="editable-field">
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" class="editable" required>
+                </div>
+                 <div class="editable-field">
+                    <label for="confirm-password">Confirmar Senha:</label>
+                    <input type="password" id="confirm-password" class="editable" required>
+                </div>
+                <button type="submit" class="btn-save">Registrar</button>
+            </form>
+            <div class="auth-link">
+                <span>Já possui registro?</span>
+                <a href="./login.html">Acessar Dossiê</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+    
+    <script src="./firebase-init.js"></script>
+    <script src="./auth.js"></script>
+</body>
+</html>

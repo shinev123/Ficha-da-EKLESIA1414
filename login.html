@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Dossiê de Agente</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="static-overlay"></div>
+    <div id="toast-container"></div>
+    <div class="auth-container">
+        <div class="card auth-card">
+            <h1 class="glitch" data-text="E.K.L.E.S.I.A">E.K.L.E.S.I.A</h1>
+            <p class="auth-subtitle">Acesso Restrito</p>
+            <form id="login-form">
+                <div class="editable-field">
+                    <label for="email">Email de Agente:</label>
+                    <input type="email" id="email" class="editable" required>
+                </div>
+                <div class="editable-field">
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" class="editable" required>
+                </div>
+                <button type="submit" class="btn-save">Entrar</button>
+            </form>
+            <div class="auth-link">
+                <span>Não tem um registro?</span>
+                <a href="./register.html">Registrar novo Agente</a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="deleted-user-overlay" class="deleted-overlay hidden">
+        <div id="crypto-rain"></div>
+        <div class="glitch-error-message" data-text="ERRO">ERRO</div>
+        <div class="glitch-error-message" data-text="SAIA">SAIA</div>
+        <div class="glitch-error-message" data-text="DAQUI">DAQUI</div>
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+    
+    <script src="./firebase-init.js"></script>
+    <script src="./auth.js"></script>
+</body>
+</html>
